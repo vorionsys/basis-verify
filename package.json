@@ -13,7 +13,7 @@
     }
   },
   "bin": {
-    "verify": "./dist/cli.js"
+    "verify": "dist/cli.js"
   },
   "files": [
     "dist",
