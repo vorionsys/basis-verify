@@ -9,6 +9,9 @@
  * re-linked with the fixture private key so ONLY the target check fails.
  *
  * Run: npx tsx scripts/make-fixtures.ts
+ * Needs gate-core installed ad hoc (`npm i -D @vorionsys/gate-core --no-save`) —
+ * deliberately not a standing devDependency: gate-core depends on this package
+ * at runtime, and a standing reverse edge would deadlock first-publish CI.
  */
 import { mkdirSync, writeFileSync } from "node:fs";
 import * as ed from "@noble/ed25519";

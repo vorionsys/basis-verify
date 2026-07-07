@@ -65,8 +65,11 @@ Fail-fast, reporting the exact record index, check name, and message.
 
 `fixtures/` contains a valid 6-record chain plus one tampered variant per failure
 class (signature, link, reorder, unknown key, bad schema, non-monotonic timestamps) —
-regenerate with `npm run fixtures`, assert the matrix with `npm test`, and run the
-1,000-iteration byte-flip property test with `npm run test:byte-flip`.
+assert the matrix with `npm test`, and run the 1,000-iteration byte-flip property
+test with `npm run test:byte-flip`. Regenerating them (`npm run fixtures`) uses the
+real gate engine and needs a one-off `npm i -D @vorionsys/gate-core --no-save` —
+it is deliberately not a standing devDependency to keep the verify↔gate install
+graph acyclic (gate-core depends on this package at runtime).
 
 ## Where this sits in BASIS
 

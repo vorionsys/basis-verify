@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Fixture matrix + byte-flip smoke
+        run: npm test
+      - name: Byte-flip property test (1k iterations)
+        run: npm run test:byte-flip
+      - name: Verifier drift check (generated verifier.html must match src)
+        run: |
+          npm run build:verifier
+          git diff --exit-code verifier.html
+
+  offline:
+    name: CLI verifies with network disabled
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install and build (network still on)
+        run: npm install && npm run build
+      - name: Run CLI in a no-network container
+        run: |
+          docker run --rm --network none -v "$PWD":/app -w /app node:22 \
+            sh -c "node dist/cli.js fixtures/valid.chain.json --keys fixtures/keys.json && \
+                   ! node dist/cli.js fixtures/tampered-amount.chain.json --keys fixtures/keys.json"
