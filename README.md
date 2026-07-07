@@ -24,6 +24,8 @@ INVALID at record 2
 
 Flags: `--json` (machine output), `--strict` (duplicate ids, dangling `linksTo`),
 `--quiet`. Exit codes: `0` valid · `1` invalid · `2` usage/parse error.
+Installed globally, the command is `basis-verify` — deliberately not `verify`,
+which is a cmd.exe built-in that shadows it on Windows.
 
 **No network path exists in this package.** There is no key fetching, no `--remote`,
 no telemetry — the absence of those features is the feature. A CI job runs the CLI

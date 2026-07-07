@@ -9,7 +9,7 @@ import { verifyChain, type VerifyResult } from "./verify.js";
 
 function usage(): never {
   process.stderr.write(
-    "usage: verify <chain.json> --keys <keys.json> [--json] [--strict] [--quiet]\n",
+    "usage: npx @vorionsys/verify <chain.json> --keys <keys.json> [--json] [--strict] [--quiet]\n",
   );
   process.exit(2);
 }
