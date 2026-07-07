@@ -1,0 +1,221 @@
+{
+  "basisVerify": "1",
+  "records": [
+    {
+      "v": "1",
+      "id": "01KWHJ8DESJGXPRPG4179ZPNB8",
+      "ts": "2026-07-02T14:03:23.481Z",
+      "agent": {
+        "id": "agt_qclose_01",
+        "tier": 2,
+        "credential": {
+          "id": "cred_9f3a",
+          "status": "active",
+          "expiresAt": "2026-07-02T14:05:00.000Z"
+        }
+      },
+      "action": {
+        "domain": "finance.ledger",
+        "capability": "ledger.read",
+        "paramsHash": "sha256:b0a6fe5114294450ae50e0af7765651f8bc43fcd0752e9fa78d13ae85d18ed02"
+      },
+      "policy": {
+        "id": "pol_qclose",
+        "version": "1.0.0",
+        "hash": "sha256:bafc8357379dfb327debffa10282bb4ab1e4fea90168681e92bbf0b0b3ad01bc"
+      },
+      "verdict": {
+        "decision": "allow",
+        "reason": "WITHIN_AUTHORITY",
+        "linksTo": null,
+        "latencyMs": 5
+      },
+      "prev": "GENESIS",
+      "sig": {
+        "alg": "ed25519",
+        "kid": "vorion-demo-2026-07",
+        "value": "oM4OzzTJ2RLjbZTs1xsAxLg486WAV9VbsEZmZDZblEFrN11tWjkK6ykmQMVwr7IBCaCQ2Hd7uH+mRwB1O/b1Cw=="
+      }
+    },
+    {
+      "v": "1",
+      "id": "01KWHJ8EE13WVTE8T1RYS3AM18",
+      "ts": "2026-07-02T14:03:24.481Z",
+      "agent": {
+        "id": "agt_qclose_01",
+        "tier": 2,
+        "credential": {
+          "id": "cred_9f3a",
+          "status": "active",
+          "expiresAt": "2026-07-02T14:05:00.000Z"
+        }
+      },
+      "action": {
+        "domain": "finance.ledger",
+        "capability": "ledger.write",
+        "paramsHash": "sha256:4b841815a1756bd01fbdab7bb48d31d89ac8111bbbc99be8c5112c63e9223494"
+      },
+      "policy": {
+        "id": "pol_qclose",
+        "version": "1.0.0",
+        "hash": "sha256:bafc8357379dfb327debffa10282bb4ab1e4fea90168681e92bbf0b0b3ad01bc"
+      },
+      "verdict": {
+        "decision": "allow",
+        "reason": "WITHIN_AUTHORITY",
+        "linksTo": null,
+        "latencyMs": 0
+      },
+      "prev": "sha256:c5ed96c6a2f3e1f4a8bab7bc5d72a230e60e35019200b9607dac97ca3f1d09bc",
+      "sig": {
+        "alg": "ed25519",
+        "kid": "vorion-demo-2026-07",
+        "value": "950vlWErvyloDFZrUcbdCcubZBRYWkWdJCJbLDE7tJm2MqCzFYVSJ/dQFntzDtXtso3KxHyhYy/M+lKBFbZZDw=="
+      }
+    },
+    {
+      "v": "1",
+      "id": "01KWHJ8FD9GR8G0JHMPVT7TDX4",
+      "ts": "2026-07-02T14:03:25.481Z",
+      "agent": {
+        "id": "agt_qclose_01",
+        "tier": 2,
+        "credential": {
+          "id": "cred_9f3a",
+          "status": "active",
+          "expiresAt": "2026-07-02T14:05:00.000Z"
+        }
+      },
+      "action": {
+        "domain": "finance.payments",
+        "capability": "payments.execute",
+        "paramsHash": "sha256:185b5b0e3cc46ac47d2963959862b8946849e7dc86320bc2601910b44f0faf5b"
+      },
+      "policy": {
+        "id": "pol_qclose",
+        "version": "1.0.0",
+        "hash": "sha256:bafc8357379dfb327debffa10282bb4ab1e4fea90168681e92bbf0b0b3ad01bc"
+      },
+      "verdict": {
+        "decision": "escalate",
+        "reason": "TIER_CAP_EXCEEDED",
+        "linksTo": null,
+        "latencyMs": 0
+      },
+      "prev": "sha256:fc50a9d618c81ca0d6269939e7f7d24849e7b094f3f6acd124ff45019953d0f2",
+      "sig": {
+        "alg": "ed25519",
+        "kid": "vorion-demo-2026-07",
+        "value": "pAs2dt0HE8wBZCWcuDMI7GgDFqR6uzBRpKcWyrDWD21f+FScOaaaRPgZWnlECaKuAseSRqvERcZS3bAYuR79DA=="
+      }
+    },
+    {
+      "v": "1",
+      "id": "01KWHJ8GCHV90F04X7AKQJSKK2",
+      "ts": "2026-07-02T14:03:26.481Z",
+      "agent": {
+        "id": "agt_qclose_01",
+        "tier": 2,
+        "credential": {
+          "id": "cred_9f3a",
+          "status": "active",
+          "expiresAt": "2026-07-02T14:05:00.000Z"
+        }
+      },
+      "action": {
+        "domain": "finance.payments",
+        "capability": "payments.execute",
+        "paramsHash": "sha256:185b5b0e3cc46ac47d2963959862b8946849e7dc86320bc2601910b44f0faf5b"
+      },
+      "policy": {
+        "id": "pol_qclose",
+        "version": "1.0.0",
+        "hash": "sha256:bafc8357379dfb327debffa10282bb4ab1e4fea90168681e92bbf0b0b3ad01bc"
+      },
+      "verdict": {
+        "decision": "deny",
+        "reason": "HUMAN_DENIED",
+        "linksTo": "01KWHJ8FD9GR8G0JHMPVT7TDX4",
+        "latencyMs": 0
+      },
+      "prev": "sha256:a1d9e32ce90f529c81e58bee469704d15731e2068b653c3f245875e716a4861c",
+      "sig": {
+        "alg": "ed25519",
+        "kid": "vorion-demo-2026-07",
+        "value": "h8oCfcNp4I8CaZJOWNn8/risgz5AkXeXt00hQlNkom3mwJzDoobE09QTvz376Z3NAvxNN5PHaG/Vqd4E0yQjCw=="
+      }
+    },
+    {
+      "v": "1",
+      "id": "01KWHJ8HBS82WZ7T7D204BHZDC",
+      "ts": "2026-07-02T14:03:27.481Z",
+      "agent": {
+        "id": "agt_qclose_01",
+        "tier": 2,
+        "credential": {
+          "id": "cred_9f3a",
+          "status": "active",
+          "expiresAt": "2026-07-02T14:05:00.000Z"
+        }
+      },
+      "action": {
+        "domain": "vendor.api",
+        "capability": "vendor.api.call",
+        "paramsHash": "sha256:6b07c8b25f3f4ecde87941ba005315bfc2556e7dd3b228295b8b614ca9beea33"
+      },
+      "policy": {
+        "id": "pol_qclose",
+        "version": "1.0.0",
+        "hash": "sha256:bafc8357379dfb327debffa10282bb4ab1e4fea90168681e92bbf0b0b3ad01bc"
+      },
+      "verdict": {
+        "decision": "deny",
+        "reason": "DOMAIN_NOT_ALLOWLISTED",
+        "linksTo": null,
+        "latencyMs": 1
+      },
+      "prev": "sha256:2eca3dbc024c41afa5f16116de4ec54c95f2a75aa777258066b4f42d462bcf0c",
+      "sig": {
+        "alg": "ed25519",
+        "kid": "vorion-demo-2026-07",
+        "value": "sSWUdq6Z94po2hyGuOfId9i5/oXguHrtKWuPsT5MlPlVcbKDeDtPlgHqFPSXqJPzCC4Uh6cC4GpaurpBQ63zAA=="
+      }
+    },
+    {
+      "v": "1",
+      "id": "01KWHJ8JB1BMD0RDT5NGRMFD70",
+      "ts": "2026-07-02T14:03:28.481Z",
+      "agent": {
+        "id": "agt_qclose_01",
+        "tier": 2,
+        "credential": {
+          "id": "cred_9f3a",
+          "status": "expired",
+          "expiresAt": "2026-07-02T14:05:00.000Z"
+        }
+      },
+      "action": {
+        "domain": "finance.ledger",
+        "capability": "ledger.write",
+        "paramsHash": "sha256:be9248e0a24d522e38fbb3b41b6a21a82bf976d5e3760f6849bd67f52320bd71"
+      },
+      "policy": {
+        "id": "pol_qclose",
+        "version": "1.0.0",
+        "hash": "sha256:bafc8357379dfb327debffa10282bb4ab1e4fea90168681e92bbf0b0b3ad01bc"
+      },
+      "verdict": {
+        "decision": "deny",
+        "reason": "CREDENTIAL_EXPIRED",
+        "linksTo": null,
+        "latencyMs": 0
+      },
+      "prev": "sha256:c75e0d8c8f173afa8826fd540a8fb99f2345328d335f5ac8d3423c39ac37a2ce",
+      "sig": {
+        "alg": "ed25519",
+        "kid": "vorion-demo-2026-07",
+        "value": "xD9xPJWF9fC/YNuG/foyrQwLjJTOElbX/6IShHeHekuV/ng52ZJ63DYkckFwyCBVhZAwCy89IsdacHxZ2hQHCw=="
+      }
+    }
+  ]
+}
