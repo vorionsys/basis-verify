@@ -14,7 +14,6 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
-          cache: npm
       - name: Install
         run: npm install
       - name: Build
@@ -36,7 +35,6 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
-          cache: npm
       - name: Install and build (network still on)
         run: npm install && npm run build
       - name: Run CLI in a no-network container
