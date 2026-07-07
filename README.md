@@ -87,10 +87,10 @@ Standard: [`basis-spec`](https://github.com/vorionsys/basis-spec) · [vorion.org
 ## Status & versioning
 
 `v0.1.0` — API stable enough to script against; strict mode may add checks in minors.
-npm publish (with `--provenance`) lands once `@vorionsys/contracts@1.2.0`
-(vorionsys/contracts PR: `feat/basis-decision-record`) is merged and released;
-until then, build from source below. Non-goals for v1: multi-signer chains, key
-rotation/revocation lists, Merkle batching, timestamp authorities.
+This is the **one verifier verb** for the Vorion ecosystem: v0.2 adds
+`--format aurais` (absorbing [`aurais-verify`](https://www.npmjs.com/package/@vorionsys/aurais-verify),
+which will then deprecate with a pointer here). Non-goals for v1: multi-signer
+chains, key rotation/revocation lists, Merkle batching, timestamp authorities.
 
 ## Development
 
