@@ -1,6 +1,6 @@
 {
   "name": "@vorionsys/verify",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Offline verifier for BASIS proof chains — CLI, library, and static HTML. No network, no service, no trust in Vorion required.",
   "type": "module",
   "license": "Apache-2.0",
@@ -33,7 +33,7 @@
   "dependencies": {
     "@noble/ed25519": "^2.1.0",
     "@noble/hashes": "^1.4.0",
-    "@vorionsys/contracts": "^1.2.0"
+    "@vorionsys/contracts": "^1.3.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.0",

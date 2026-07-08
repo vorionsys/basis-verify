@@ -88,9 +88,12 @@ Standard: [`basis-spec`](https://github.com/vorionsys/basis-spec) · [vorion.org
 
 ## Status & versioning
 
-`v0.1.0` — API stable enough to script against; strict mode may add checks in minors.
-This is the **one verifier verb** for the Vorion ecosystem: v0.2 adds
-`--format aurais` (absorbing [`aurais-verify`](https://www.npmjs.com/package/@vorionsys/aurais-verify),
+`v0.2.0` — rebuilt against `@vorionsys/contracts@1.3.0` (records carrying the
+`CAPABILITY_NOT_GRANTED` / `PARAM_NOT_ALLOWLISTED` / `RATE_LIMIT_EXCEEDED`
+reason codes now validate; 0.1.x schema-rejects them). API stable enough to
+script against; strict mode may add checks in minors. This is the **one
+verifier verb** for the Vorion ecosystem: a coming minor adds `--format aurais`
+(absorbing [`aurais-verify`](https://www.npmjs.com/package/@vorionsys/aurais-verify),
 which will then deprecate with a pointer here). Non-goals for v1: multi-signer
 chains, key rotation/revocation lists, Merkle batching, timestamp authorities.
 
