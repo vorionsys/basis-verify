@@ -31,6 +31,25 @@ which is a cmd.exe built-in that shadows it on Windows.
 no telemetry — the absence of those features is the feature. A CI job runs the CLI
 in a network-disabled container to keep it that way.
 
+## Aurais chains too — one verifier verb
+
+The same CLI verifies **Aurais proof chains** (the format emitted by every
+`@vorionsys/aurais-mcp-*` bot). No flags needed — the format is auto-detected,
+and Aurais events embed their keys, so there is no `--keys` file:
+
+```bash
+$ npx @vorionsys/verify proof-chain.json
+ℹ signing key is session-scoped (ephemeral): this chain proves integrity, not signer identity
+VALID [aurais] — 4 records, 1 signer (ed25519-ephemeral:8087ef…), …
+```
+
+Checks: per-event Ed25519 (embedded SPKI keys), hash links, sequence, chain-wide
+key consistency — plus the ephemeral-key advisory, exactly as
+[`aurais-verify`](https://www.npmjs.com/package/@vorionsys/aurais-verify) reports it
+(which this absorbs per [basis-gate#8](https://github.com/vorionsys/basis-gate/issues/8);
+fixtures are generated with the genuine `@vorionsys/aurais-core` emitter).
+Force a format with `--format basis|aurais` when auto-detection isn't wanted.
+
 ## The static verifier
 
 [`verifier.html`](verifier.html) is a single self-contained file generated from the
@@ -88,14 +107,13 @@ Standard: [`basis-spec`](https://github.com/vorionsys/basis-spec) · [vorion.org
 
 ## Status & versioning
 
-`v0.2.0` — rebuilt against `@vorionsys/contracts@1.3.0` (records carrying the
-`CAPABILITY_NOT_GRANTED` / `PARAM_NOT_ALLOWLISTED` / `RATE_LIMIT_EXCEEDED`
-reason codes now validate; 0.1.x schema-rejects them). API stable enough to
-script against; strict mode may add checks in minors. This is the **one
-verifier verb** for the Vorion ecosystem: a coming minor adds `--format aurais`
-(absorbing [`aurais-verify`](https://www.npmjs.com/package/@vorionsys/aurais-verify),
-which will then deprecate with a pointer here). Non-goals for v1: multi-signer
-chains, key rotation/revocation lists, Merkle batching, timestamp authorities.
+`v0.4.0` — the **one verifier verb** for the Vorion ecosystem: BASIS
+decision-record chains AND Aurais proof chains, auto-detected
+([basis-gate#8](https://github.com/vorionsys/basis-gate/issues/8);
+`aurais-verify` deprecates with a pointer here once its consumers migrate).
+API stable enough to script against; strict mode may add checks in minors.
+Non-goals for v1: multi-signer BASIS chains, key rotation/revocation lists,
+Merkle batching, timestamp authorities.
 
 ## Development
 

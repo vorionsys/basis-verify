@@ -21,7 +21,7 @@ ed.etc.sha512Sync = (...m: Uint8Array[]) => sha512(ed.etc.concatBytes(...m));
 
 /* ── result types ───────────────────────────────────────────────────────── */
 
-export type CheckName = "envelope" | "schema" | "key" | "signature" | "link" | "timestamp" | "strict";
+export type CheckName = "envelope" | "schema" | "key" | "signature" | "link" | "timestamp" | "sequence" | "strict";
 
 export interface RecordCheck {
   index: number;
@@ -37,6 +37,8 @@ export interface VerifyResult {
   firstFailure: { index: number; id: string | null; check: CheckName; message: string } | null;
   signers: string[]; // distinct kids seen on valid-signature records
   span: { from: string; to: string } | null;
+  /** Format-specific advisories (e.g. Aurais ephemeral-key warning, tip hash). */
+  notes?: string[];
 }
 
 export interface VerifyOptions {

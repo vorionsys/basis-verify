@@ -1,6 +1,6 @@
 {
   "name": "@vorionsys/verify",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Offline verifier for BASIS proof chains — CLI, library, and static HTML. No network, no service, no trust in Vorion required.",
   "type": "module",
   "license": "Apache-2.0",
@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.14.0",
+    "@vorionsys/aurais-core": "^0.2.1",
     "esbuild": "0.28.1",
     "tsx": "^4.16.0",
     "typescript": "^5.5.0"

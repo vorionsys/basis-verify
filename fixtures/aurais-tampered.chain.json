@@ -1,0 +1,52 @@
+[
+  {
+    "seq": 0,
+    "ts": "2026-07-12T13:57:44.058Z",
+    "action": "session_started",
+    "payload": {
+      "bot": "fixture",
+      "n": 1
+    },
+    "prev_hash": "",
+    "pubkey": "MCowBQYDK2VwAyEAszsGw3Js0nHi0Wk4+JFIkXIL/5sEFjdQSfgEB23WiqI=",
+    "key_id": "ed25519-ephemeral:8087efd8c49b",
+    "sig": "3ps4N+5Vx8kHMXPXrRxgfwJu7lGFxtf8xvnthXz+PDzF06oyAD0P0E0UkYWRHZ8h4b9+hTeUWOh5jm+8f+9XDA=="
+  },
+  {
+    "seq": 1,
+    "ts": "2026-07-12T13:57:44.061Z",
+    "action": "commentary_generated",
+    "payload": {
+      "provider": "anthropic",
+      "ok": false
+    },
+    "prev_hash": "3c940ef15f2daea9c2e92d475f31e1accff9eeea63216b862124ad18d379056f",
+    "pubkey": "MCowBQYDK2VwAyEAszsGw3Js0nHi0Wk4+JFIkXIL/5sEFjdQSfgEB23WiqI=",
+    "key_id": "ed25519-ephemeral:8087efd8c49b",
+    "sig": "7cAMmqvFrhUgxPj2BShu8aF0mP21Ev3190XLAnp4kc+XDv17kkNdtVlHMGnUgBxa7wl5P0bvbSbmI+OKvX8PDg=="
+  },
+  {
+    "seq": 2,
+    "ts": "2026-07-12T13:57:44.062Z",
+    "action": "briefing_assembled",
+    "payload": {
+      "count": 3
+    },
+    "prev_hash": "045ef180cfa3214e264910b1bf17c73b8ff3f9eabe854f746f587e9f7e8a6c22",
+    "pubkey": "MCowBQYDK2VwAyEAszsGw3Js0nHi0Wk4+JFIkXIL/5sEFjdQSfgEB23WiqI=",
+    "key_id": "ed25519-ephemeral:8087efd8c49b",
+    "sig": "83UxnHlmf7C5oVYsICFEYQHVjKdvOGFLBmEQP99ziT3U4Z3YjU6V3dAp2HqSY1NlAaxL+21ilznqJYQKWM/LBg=="
+  },
+  {
+    "seq": 3,
+    "ts": "2026-07-12T13:57:44.062Z",
+    "action": "session_closed",
+    "payload": {
+      "clean": true
+    },
+    "prev_hash": "d452dab153e2e82b9690b269f1ed020aab8444bf3f93a4715c2916e06bd9011e",
+    "pubkey": "MCowBQYDK2VwAyEAszsGw3Js0nHi0Wk4+JFIkXIL/5sEFjdQSfgEB23WiqI=",
+    "key_id": "ed25519-ephemeral:8087efd8c49b",
+    "sig": "jz5ixqvb+sSbvV0HzPQqT82qOZP5tzDfY45R3pbfwPlt5R/quGw3o25U61rkGA0Sg/DITKMUEt5KVGaJmAFuDg=="
+  }
+]

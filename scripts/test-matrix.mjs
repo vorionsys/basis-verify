@@ -5,7 +5,7 @@
  */
 import { readFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
-import { verifyChain } from "../dist/index.js";
+import { detectFormat, verifyAuraisChain, verifyChain } from "../dist/index.js";
 
 const load = (n) => JSON.parse(readFileSync(`fixtures/${n}`, "utf8"));
 const keys = load("keys.json");
@@ -28,6 +28,23 @@ for (const [file, failIndex, check] of MATRIX) {
       ? r.valid
       : !r.valid && r.firstFailure.index === failIndex && r.firstFailure.check === check;
   console.log(`${ok ? "✓" : "✗"} ${file} → ${r.valid ? "VALID" : `INVALID @${r.firstFailure.index} (${r.firstFailure.check})`}`);
+  if (!ok) failures++;
+}
+
+// Aurais format: genuine emitter fixtures + detection + key-embedded verification
+{
+  const av = load("aurais-valid.chain.json");
+  const at = load("aurais-tampered.chain.json");
+  const rv = verifyAuraisChain(av);
+  const rt = verifyAuraisChain(at);
+  const detOk = detectFormat(av) === "aurais" && detectFormat(load("valid.chain.json")) === "basis";
+  const ok =
+    rv.valid &&
+    rv.signers.length === 1 &&
+    (rv.notes ?? []).some((n) => n.includes("ephemeral")) &&
+    !rt.valid && rt.firstFailure.index === 1 && rt.firstFailure.check === "signature" &&
+    detOk;
+  console.log(`${ok ? "✓" : "✗"} aurais: valid=${rv.valid} (ephemeral noted) · tampered → INVALID @${rt.firstFailure?.index} (${rt.firstFailure?.check}) · auto-detect ok=${detOk}`);
   if (!ok) failures++;
 }
 
