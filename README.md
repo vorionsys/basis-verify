@@ -4,7 +4,7 @@
 
 **Status:** Published on npm as `@vorionsys/verify@0.6.0`. The CLI, library, and `verifier.html` verify BASIS chains offline, and the CLI auto-detects Aurais chains. Pre-1.0: strict mode may add checks; key rotation, Merkle batching, and timestamp authorities are absent.  
 `npm test` on this tree: 8/8 fixture-matrix checks passed, 0 failed; its 200-iteration byte-flip smoke had 0 escapes. `npm run test:byte-flip`: 1,000 iterations, 0 escapes.  
-Known issue: `@vorionsys/contracts@^1.6.0` (resolved 1.6.1) depends on `zod@^3.24.1` (resolved 3.25.76), inside open high-severity [GHSA-mrhx-c7xc-m3w5](https://github.com/advisories/GHSA-mrhx-c7xc-m3w5) (`zod` &lt; 4.6.6).
+Known issue: `@vorionsys/contracts@^1.6.0` (resolved 1.6.1) depends on `zod@^3.24.1` (resolved 3.25.76), inside open high-severity [GHSA-mrhx-c7xc-m3w5](https://github.com/advisories/GHSA-mrhx-c7xc-m3w5) (`zod < 4.6.6`).
 
 ![license](https://img.shields.io/badge/license-Apache--2.0-blue)
 
@@ -129,7 +129,7 @@ It verifies BASIS decision-record chains and Aurais proof chains
 ([basis-gate#8](https://github.com/vorionsys/basis-gate/issues/8)).
 `@vorionsys/aurais-verify@0.5.1` is still published and is not marked deprecated;
 that issue says it deprecates with a pointer here once its consumers migrate.
-The check functions in this repo are unchanged since 0.4.0; strict mode may add checks in minors.
+The TypeScript sources are the same since 0.4.0. Releases 0.5.0 and 0.6.0 were rebuilt against `@vorionsys/contracts` `^1.5.0` and then `^1.6.0`, and the schema those builds accept gained the reason codes `APPROVAL_CEILING_EXCEEDED` and then `VERIFICATION_REQUIRED`. Strict mode may add checks in minors.
 A second BASIS signer is not rejected when its `kid` is in the keys file.
 Still out of scope: key rotation/revocation lists, Merkle batching, timestamp authorities.
 
