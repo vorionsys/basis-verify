@@ -146,4 +146,4 @@ Node ≥ 18. PRs: small, tested, one concern. Issues welcome — including
 
 ## License
 
-Apache-2.0. Copyright 2026 Vorion Systems
+Apache-2.0. Copyright 2026 Vorion LLC
